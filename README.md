@@ -96,13 +96,17 @@ In this project, the following secure coding principles have been implemented to
 3. **Prepared Statements**:
    - SQL queries utilize prepared statements, which separate SQL logic from data. This prevents SQL injection attacks by ensuring that user input is treated as data rather than executable code.
    - Example of a prepared statement in JDBC:
-     ```java
-     String sql = "INSERT INTO users (name, registration_number, password) VALUES (?, ?, ?)";
-     PreparedStatement pstmt = connection.prepareStatement(sql);
-     pstmt.setString(1, userName);
-     pstmt.setString(2, registrationNumber);
-     pstmt.setString(3, hashedPassword);
-     pstmt.executeUpdate();
+   ```java
+     String sql = "INSERT INTO users (name, reg_number, password) VALUES (?, ?, ?)";
+     PreparedStatement preparedStatement = conn.prepareStatement(sql);
+
+     // Set values for the placeholders
+     preparedStatement.setString(1, name);         
+     preparedStatement.setString(2, reg_number);   
+     preparedStatement.setString(3, password);      
+
+     // Execute the insert statement
+     preparedStatement.executeUpdate();
      ```
 
 4. **Error Handling**:
@@ -116,4 +120,4 @@ In this project, the following secure coding principles have been implemented to
 3. **Security Misconfiguration**: Proper database connection and error handling.
 
 ## Contribution
-This is an individual project for educational purposes. Contributions are accepted.
+This is an individual project for educational purposes.
