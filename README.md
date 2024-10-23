@@ -111,7 +111,7 @@ In this project, the following secure coding principles have been implemented to
 
 4. **Error Handling**:
    - Errors are handled gracefully without exposing sensitive information. Generic error messages are shown to users while logging detailed error information server-side.
-   - For example, if a database connection fails, the user might see a message like "An error occurred. Please try again later" instead of the actual exception details.
+   - For example, if a database connection fails, the user might see a message like "Failed to connect to the database" instead of the actual exception details.
 
 ## OWASP Top 10 Implementation
 **This project addresses several items from the OWASP Top 10:**
